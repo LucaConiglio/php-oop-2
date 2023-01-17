@@ -10,7 +10,17 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo,
  <?php 
 include_once  "./classes/Prodotti.php";
 
-$card = new Prodotti("gatto","pallina di gomma","12€");
+$cards [
+  $prodotto_1 = new Prodotti("gatto","pallina di gomma","3€"),
+  $prodotto_2 = new Prodotti("cane", "gomitolo di lana", "9€"),
+  $prodotto_3 = new Prodotti("gatto", "croccantini", "14€"),
+  $prodotto_4 = new Prodotti("cane", "croccantini", "10€"),
+  $prodotto_5 = new Prodotti("gatto", "lettiera", "14"),
+  $prodotto_6 = new Prodotti("cane", "osso di plastica", "2.50€"),
+  $prodotto_7 = new Prodotti("gatto", "affila unghia", "18€"),
+  $prodotto_8 = new Prodotti("cane", "pettorina", "9€"),
+
+] 
 
 var_dump($card);
 ?>
