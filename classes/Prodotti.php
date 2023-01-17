@@ -1,13 +1,14 @@
 <?php 
 class Prodotti {
  protected string $animale;
+ protected string $image;
  protected string $titolo;
  protected int|string $prezzo;
  
- function __construct($animale,$titolo,$prezzo) {
+ function __construct($animale,$image,$titolo,$prezzo) {
   $this->setAnimale($animale);
+  $this->setImage($image);
   $this->setTitolo($titolo);
- 
   $this->setPrezzo($prezzo);
   
  }
@@ -39,6 +40,25 @@ class Prodotti {
 
   return $this;
  }
+ /**
+   * Get the value of image
+   */ 
+  public function getImage()
+  {
+    return $this->image;
+  }
+
+  /**
+   * Set the value of image
+   *
+   * @return  self
+   */ 
+  public function setImage($image)
+  {
+    $this->image = $image;
+
+    return $this;
+  }
 
  /**
   * Get the value of titolo
@@ -78,4 +98,6 @@ class Prodotti {
 
   return $this;
  }
+
+  
 }

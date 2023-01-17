@@ -8,21 +8,22 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo,
  (prodotto, cibo, gioco, cuccia). -->
 
  <?php 
-include_once  "./classes/Prodotti.php";
+require_once  "./classes/Prodotti.php";
+require_once "./classes/Descrizione.php";
 
-$cards [
-  $prodotto_1 = new Prodotti("gatto","pallina di gomma","3€"),
-  $prodotto_2 = new Prodotti("cane", "gomitolo di lana", "9€"),
-  $prodotto_3 = new Prodotti("gatto", "croccantini", "14€"),
-  $prodotto_4 = new Prodotti("cane", "croccantini", "10€"),
-  $prodotto_5 = new Prodotti("gatto", "lettiera", "14"),
-  $prodotto_6 = new Prodotti("cane", "osso di plastica", "2.50€"),
-  $prodotto_7 = new Prodotti("gatto", "affila unghia", "18€"),
-  $prodotto_8 = new Prodotti("cane", "pettorina", "9€"),
+$cards = [
+  $prodotto_1 = new Descrizione("gatto","https://picsum.photos/300/300","gomitolo di lana","gatto","9€","palla da gioco per gatti"),
+  $prodotto_2 = new Descrizione("cane","https://picsum.photos/300/300", "pallina di gomma","cane", "3€","palla da tennis per cani"),
+  $prodotto_3 = new Descrizione("gatto","https://picsum.photos/300/300", "croccantini per gatti","gatto","9€","palla da gioco per gatti"),
+  $prodotto_4 = new Descrizione("cane","https://picsum.photos/300/300", "croccantini per cani","gatto","9€","palla da gioco per gatti"),
+  $prodotto_5 = new Descrizione("gatto","https://picsum.photos/300/300", "lettiera", "gatto","9€","palla da gioco per gatti"),
+  $prodotto_6 = new Descrizione("cane","https://picsum.photos/300/300", "osso di plastica", "gatto","9€","palla da gioco per gatti"),
+  $prodotto_7 = new Descrizione("gatto","https://picsum.photos/300/300", "affila unghia", "gatto","9€","palla da gioco per gatti"),
+  $prodotto_8 = new Descrizione("cane","https://picsum.photos/300/300", "pettorina", "gatto","9€","palla da gioco per gatti"),
 
-] 
+];
 
-var_dump($card);
+//var_dump($cards);
 ?>
 
  <html lang="en">
@@ -41,18 +42,23 @@ var_dump($card);
 <link rel="stylesheet" href="css/style.css">
  </head>
  <body>
-  <?php echo $card->getAnimale()?>
+  <?php echo $prodotto_1->getAnimale()?>
   <section>
     <div class="container">
-      <div class="d-flex justify-content-around p5">
-        <div foreach="Prodotti as prodotto" class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="row p5">
+        
+           
+            <?php foreach($cards as $prodotto) { ?> <div class="col">
+            <div class="card">
+            <img src="<?php echo $prodotto->getImage() ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $prodotto->getTitolo() ?></h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+           </div>
           </div>
         </div>
+        <?php }?>
       </div>
       
     </div>
