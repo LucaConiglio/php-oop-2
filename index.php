@@ -14,12 +14,12 @@ require_once "./classes/Descrizione.php";
 $cards = [
   $prodotto_1 = new Descrizione("gatto","https://picsum.photos/300/300","gomitolo di lana","gatto","9€","palla da gioco per gatti"),
   $prodotto_2 = new Descrizione("cane","https://picsum.photos/300/300", "pallina di gomma","cane", "3€","palla da tennis per cani"),
-  $prodotto_3 = new Descrizione("gatto","https://picsum.photos/300/300", "croccantini per gatti","gatto","9€","palla da gioco per gatti"),
-  $prodotto_4 = new Descrizione("cane","https://picsum.photos/300/300", "croccantini per cani","gatto","9€","palla da gioco per gatti"),
-  $prodotto_5 = new Descrizione("gatto","https://picsum.photos/300/300", "lettiera", "gatto","9€","palla da gioco per gatti"),
-  $prodotto_6 = new Descrizione("cane","https://picsum.photos/300/300", "osso di plastica", "gatto","9€","palla da gioco per gatti"),
-  $prodotto_7 = new Descrizione("gatto","https://picsum.photos/300/300", "affila unghia", "gatto","9€","palla da gioco per gatti"),
-  $prodotto_8 = new Descrizione("cane","https://picsum.photos/300/300", "pettorina", "gatto","9€","palla da gioco per gatti"),
+  $prodotto_3 = new Descrizione("gatto","https://picsum.photos/300/300", "croccantini per gatti","gatto","13€","croccantini ipoallergenici specifico per gatti"),
+  $prodotto_4 = new Descrizione("cane","https://picsum.photos/300/300", "croccantini per cani","gatto","10.50€","croccantini al manzo"),
+  $prodotto_5 = new Descrizione("gatto","https://picsum.photos/300/300", "lettiera", "gatto","17€","lettiera per gatti grandezza, 55*40*10cm"),
+  $prodotto_6 = new Descrizione("cane","https://picsum.photos/300/300", "osso di plastica", "cane","2.50€","osso commestibile: peso netto 500gr"),
+  $prodotto_7 = new Descrizione("gatto","https://picsum.photos/300/300", "affila unghia", "gatto","21€","affila unghia per gatti, materiali: legno,tessuti vari e plastica"),
+  $prodotto_8 = new Descrizione("cane","https://picsum.photos/300/300", "pettorina", "cane","14.50€","pettorina supercomoda per cani di grossa taglia"),
 
 ];
 
@@ -42,19 +42,16 @@ $cards = [
 <link rel="stylesheet" href="css/style.css">
  </head>
  <body>
-  <?php echo $prodotto_1->getAnimale()?>
-  <section>
+  <section class="pt-5">
     <div class="container">
       <div class="row p5">
-        
-           
             <?php foreach($cards as $prodotto) { ?> <div class="col">
             <div class="card">
             <img src="<?php echo $prodotto->getImage() ?>" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><?php echo $prodotto->getTitolo() ?></h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-             <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text"><?php echo $prodotto->getDescrizione() ?></p>
+             <a href="#" class="text-danger"><?php echo $prodotto->getAnimale() ?></a>
            </div>
           </div>
         </div>
